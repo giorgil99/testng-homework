@@ -41,7 +41,7 @@ public class RadioButtonTests {
     @Test
 
     public void test2_try1 () {
-        System.out.println("test2_tr1");
+        System.out.println("test2_try1");
         $("label.custom-control-label[for='yesRadio']").scrollIntoView(true);
         $("label.custom-control-label[for='yesRadio']").click();
         $("span.text-success").shouldHave(Condition.text("No")) ;
@@ -53,14 +53,13 @@ public class RadioButtonTests {
 
     @Test
     public void test2_try2 () {
-        System.out.println("test2_tr2");
+        System.out.println("test2_try2");
         $("#noRadio").shouldNotBe(Condition.disabled);
 
     }
 
     @AfterTest
     public void terminate() {
-//    closes browser after CheckboxTests
         System.out.println("Closed browser after RadioButtonTests ");
     }
 

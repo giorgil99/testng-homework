@@ -44,7 +44,7 @@ public class CheckboxTests {
     @Test
 
     public void test1_try1() {
-        System.out.println("test1_tr1");
+        System.out.println("test1_try1");
         ElementsCollection list = $("#checkboxes").findAll("input[type=\"checkbox\"]");
         for (com.codeborne.selenide.SelenideElement selenideElement : list) {
             if (selenideElement.isSelected()) {
@@ -63,7 +63,7 @@ public class CheckboxTests {
     @Test
 
     public void test1_try2()  {
-        System.out.println("test1_tr2");
+        System.out.println("test1_try2");
         ElementsCollection list = $("#checkboxes").findAll("input[type=\"checkbox\"]");
         for (com.codeborne.selenide.SelenideElement selenideElement : list) {
             if (!selenideElement.isSelected()) {

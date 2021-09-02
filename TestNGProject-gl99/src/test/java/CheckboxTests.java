@@ -47,7 +47,6 @@ public class CheckboxTests {
     //    Invoke failed testng soft assertion
 
     @Test
-
     public void test1_try1() {
         Path root = Paths.get(".").normalize().toAbsolutePath();
         Configuration.reportsFolder = root + "\\CheckboxFailedTests";

@@ -3,7 +3,7 @@ import org.testng.annotations.BeforeSuite;
 
 
 public class ConfigTests {
-    @BeforeSuite
+    @BeforeSuite(groups ={"FrontEnd", "BackEnd"} )
 
     public void testCfg() {
         System.out.println("Executed before suit ");

@@ -13,10 +13,9 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 @Listeners({SoftAsserts.class})
-public class CheckboxTests {
-
-
-    @BeforeTest
+public class CheckboxTests extends localRetry {
+  public static int day ;
+    @BeforeTest(groups = {"FrontEnd"})
 
     public void test1config() {
 
@@ -31,7 +30,7 @@ public class CheckboxTests {
     }
 
     //    All tests should be started with new webdriver instance *
-    @BeforeMethod
+    @BeforeMethod(groups ={"FrontEnd"} )
     public void test1Method() {
 //        Navigate to the http://the-internet.herokuapp.com/checkboxes from CheckboxTests class
 //   !!!  moved baseUrl and reportsFolder form beforeTest  so selenide does not confuse it during parallel run
@@ -46,7 +45,7 @@ public class CheckboxTests {
     //    Create a method to uncheck checked checkbox
     //    Invoke failed testng soft assertion
 
-    @Test
+    @Test(groups ={"FrontEnd"} )
     public void test1_try1() {
         Path root = Paths.get(".").normalize().toAbsolutePath();
         Configuration.reportsFolder = root + "\\CheckboxFailedTests";
@@ -85,6 +84,8 @@ public class CheckboxTests {
         list.get(list.size() - 1).shouldNotBe(Condition.selected);
 
     }
+
+
 
     @Test(dependsOnMethods = {"test1_try1", "test1_try2"}, alwaysRun = true)
     public void test1_try3() {

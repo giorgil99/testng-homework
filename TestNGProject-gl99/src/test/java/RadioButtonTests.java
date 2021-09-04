@@ -41,7 +41,7 @@ public class RadioButtonTests {
     }
 //    Create a method in to select ‘Yes’ option
 //    Invoke failed testng soft assertion
-
+// Add CheckboxTests and RadioButtonTests first method to 'FrontEnd' group and second to 'BackEnd'
     @Test(groups= {"BackEnd"},priority = 2)
 
     public void test2_try1()  {

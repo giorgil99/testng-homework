@@ -5,7 +5,8 @@ public class localRetry  implements IRetryAnalyzer {
     private int count = 0;
     private static int maxTry = 10;
 
-
+// Write your own retry annotation
+    //  Use your annotation with parameter 10
     @Override
     public boolean retry(ITestResult iTestResult) {
         if (!iTestResult.isSuccess()) {

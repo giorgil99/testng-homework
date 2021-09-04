@@ -44,7 +44,7 @@ public class CheckboxTests extends localRetry {
 
     //    Create a method to uncheck checked checkbox
     //    Invoke failed testng soft assertion
-
+   // Add CheckboxTests and RadioButtonTests first method to 'FrontEnd' group and second to 'BackEnd'
     @Test(groups ={"FrontEnd"} )
     public void test1_try1() {
         Path root = Paths.get(".").normalize().toAbsolutePath();

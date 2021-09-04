@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class RadioButtonTests {
 
 
-    @BeforeTest
+    @BeforeTest(groups= {"BackEnd"})
     public void test2config() {
 
 //        CheckboxTests and RadioButtonTests classes should have config method with baseurl *
@@ -28,7 +28,7 @@ public class RadioButtonTests {
 
     }
 
-    @BeforeMethod
+    @BeforeMethod(groups= {"BackEnd"})
     public void test2Method() {
 //        Navigate to the https://demoqa.com/radio-button from RadioButtonTests class
 //   !!!  moved baseUrl and reportsFolder form beforeTest to beforeMethod so selenide does not confuse it during parallel run
@@ -42,9 +42,9 @@ public class RadioButtonTests {
 //    Create a method in to select ‘Yes’ option
 //    Invoke failed testng soft assertion
 
-    @Test(priority = 2)
+    @Test(groups= {"BackEnd"},priority = 2)
 
-    public void test2_try1() {
+    public void test2_try1()  {
         System.out.println("test2_try1");
         Path root = Paths.get(".").normalize().toAbsolutePath();
         Configuration.reportsFolder = root + "\\RadioButtonFailedTests";
@@ -70,6 +70,7 @@ public class RadioButtonTests {
     public void test2_try3() {
         System.out.println("this line checks that priority is correctly set and should come out before test2_try1");
     }
+
 
     @AfterTest
     public void terminate() {

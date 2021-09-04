@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="methods" thread-count="3">
+
+    <test name="GroupTests">
+        <groups>
+            <define name="allEndTests">
+                <include name="FrontEnd"/>
+                <include name="BackEnd"/>
+            </define>
+            <run>
+                <include name="allEndTests"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="FailedTest"/>
+            <class name="ConfigTests" />
+           <class name= "CheckboxTests" />
+            <class name="RadioButtonTests" />
+        </classes>
+    </test>
+</suite>

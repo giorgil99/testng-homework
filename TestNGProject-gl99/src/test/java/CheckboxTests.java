@@ -13,8 +13,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 @Listeners({SoftAsserts.class})
-public class CheckboxTests extends localRetry {
-  public static int day ;
+public class CheckboxTests  {
+
     @BeforeTest(groups = {"FrontEnd"})
 
     public void test1config() {

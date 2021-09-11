@@ -1,0 +1,10 @@
+
+
+run 'parametersTestng.xml' for @Parameters task
+
+run 'DataProviderTest.java' for @DataProvider task
+
+run 'FactoryClass.java' for   @Factory task 
+
+
+run  'runAllParameterTests.xml' to run all task in sequence

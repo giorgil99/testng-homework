@@ -54,7 +54,7 @@ public class FactoryTest {
 
 
     @Test()
-    public void dataTest() throws InterruptedException {
+    public void dataTest()  {
         Configuration.startMaximized = true;
         Configuration.browser = "Edge";
         open("https://demoqa.com/automation-practice-form");
@@ -70,9 +70,8 @@ public class FactoryTest {
         $("#submit").click();
 
         //        Validate the Student Name value dynamically
-        // საიტი ხანდახან სკიპავს რომელიმე ტესტის ინსტანციას და გამოაქ ცარიელი სტრინგები
-        // ამიტომ სჭირდება მცირე დრო ლოადისთვის
-        Thread.sleep(200);
+
+        $("tbody > tr:nth-child(1) > td:nth-child(2)").scrollIntoView(true);
         System.out.println($("tbody > tr:nth-child(1) > td:nth-child(2)").getText());
         $("tbody > tr:nth-child(1) > td:nth-child(2)").shouldBe(Condition.text(firstName + " " + lastName));
 

@@ -16,7 +16,7 @@ public class DataProviderTest {
         return new Object[][]
                 {
                         {"Forrest", "Gump", 0, "1111111111"},
-                        {"Dan", "Taylor",0, "2222222222"},
+                        {"Dan", "Taylor", 0, "2222222222"},
                         {"Jenny", " Curran", 1, "3333333333"}
                 };
 
@@ -24,9 +24,9 @@ public class DataProviderTest {
 
 
     @Test(dataProvider = "filler")
-    public void dataTest(String firstName, String lastName, Integer gender, String mobileNumber) throws InterruptedException {
-        Configuration.startMaximized =true;
-        Configuration.browser="Edge";
+    public void dataTest(String firstName, String lastName, Integer gender, String mobileNumber) {
+        Configuration.startMaximized = true;
+        Configuration.browser = "Edge";
         open("https://demoqa.com/automation-practice-form");
 
         $("#firstName").sendKeys(firstName);
@@ -38,16 +38,15 @@ public class DataProviderTest {
 
         $("#submit").scrollIntoView(true);
         $("#submit").click();
-        //        Validate the Student Name value dynamically
-        // საიტი ხანდახან სკიპავს რომელიმე ტესტის ინსტანციას და გამოაქ ცარიელი სტრინგები
-        // ამიტომ სჭირდება მცირე დრო ლოადისთვის
-        Thread.sleep(200);
+
+        $("tbody > tr:nth-child(1) > td:nth-child(2)").scrollIntoView(true);
         System.out.println($("tbody > tr:nth-child(1) > td:nth-child(2)").getText());
         $("tbody > tr:nth-child(1) > td:nth-child(2)").shouldBe(Condition.text(firstName + " " + lastName));
 
     }
+
     @AfterTest
-    public void endTest1 (){
+    public void endTest1() {
         System.out.println("<<<<TestEnd>>>>");
     }
 }

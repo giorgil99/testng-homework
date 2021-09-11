@@ -13,7 +13,7 @@ public class LocalTestTransformer implements IAnnotationTransformer {
                           Constructor testConstructor, Method testMethod) {
 
         List<String> groupNames = Arrays.asList(annotation.getGroups());
-
+//        System.out.println(Arrays.stream(annotation.getGroups()).filter(el->el.contains("DisabledGroup")));
         if (groupNames.contains("DisabledGroup")) {
 //            System.out.println(disableNumber);
 //            System.out.println("Disabled the group");
